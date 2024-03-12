@@ -1,0 +1,16 @@
+{
+  "name": "directivejs",
+  "version": "0.0.1",
+  "main": "bin/index.js",
+  "module": "bin/index.js",
+  "types": "types/index.d.js",
+  "files": [
+    "bin",
+    "types"
+  ],
+  "keywords": [
+    "vue"
+  ],
+  "author": "",
+  "license": "MIT"
+}
