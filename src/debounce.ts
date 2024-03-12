@@ -7,7 +7,6 @@ export default {
             console.log(binding);
             clearTimeout(timer)
             timer = setTimeout(() => {
-                binding.value(e);
             }, Number(time))
         })
     },

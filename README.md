@@ -1,5 +1,5 @@
 # directivejs
-> 记录平时常用小工具集合
+> 记录小工具集合
 
 ### Initial 
 ```js
