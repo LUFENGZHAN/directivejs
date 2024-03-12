@@ -1,5 +1,5 @@
 {
-  "name": "directivejs",
+  "name": "pu-directivejs",
   "version": "0.0.1",
   "main": "bin/index.js",
   "module": "bin/index.js",
