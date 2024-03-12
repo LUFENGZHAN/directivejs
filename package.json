@@ -1,6 +1,6 @@
 {
   "name": "pu-directivejs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "bin/index.js",
   "module": "bin/index.js",
   "types": "types/index.d.js",
@@ -9,7 +9,8 @@
     "types"
   ],
   "keywords": [
-    "vue"
+    "vue",
+    "directive"
   ],
   "author": "",
   "license": "MIT"

@@ -15,5 +15,9 @@ app.use(directivejs)
 ###### 函数防抖
 
 ```template
-<div v-debounce="save" debounce-time="500"/>
+// 默认500
+<div v-debounce="click"/>
+
+// 可使用属性debounce-time更改
+<div v-debounce="click" debounce-time="1000"/>
 ```
