@@ -1,11 +1,11 @@
 {
-  "name": "pu-directivejs",
-  "version": "0.0.22",
-  "main": "bin/index.js",
-  "module": "bin/index.js",
+  "name": "vuejs-directive",
+  "version": "0.0.2",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "types/index.d.js",
   "files": [
-    "bin",
+    "dist",
     "types"
   ],
   "keywords": [

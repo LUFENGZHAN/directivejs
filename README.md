@@ -1,5 +1,5 @@
 # directivejs
-> 记录小工具集合
+> 记录常用vue自定义指令
 
 ### Initial 
 ```js
@@ -18,6 +18,10 @@ app.use(directivejs)
 // 默认500
 <div v-debounce="click"/>
 
-// 可使用属性debounce-time更改
-<div v-debounce="click" debounce-time="1000"/>
+// 可使用属性debounce-time更改,可通过[1]传递一个参数
+
+<div v-debounce:[1]="click" debounce-time="1000"/>
+
+const = click(Event,1):void
+
 ```

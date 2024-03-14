@@ -2,10 +2,11 @@
   "compilerOptions": {
     "module": "ESNext",
     "baseUrl": "./",
-    "target": "ES2017",
+    "target": "ES2015",
     "declaration": true,
     "declarationDir": "./types",
-    "outDir": "./bin",
+    "outDir": "./dist",
     "strict": true,
+    "esModuleInterop": true
   },
 }
