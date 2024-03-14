@@ -3,13 +3,13 @@
 
 ### Initial 
 ```js
-npm install pu-directivejs
+npm install vuejs-directive
 ```
 ##### 使用方法 
 ```js
 // main.ts中
 const app = createApp(App);
-import directivejs from 'pu-directivejs';
+import directivejs from 'vuejs-directive';
 app.use(directivejs)
 ```
 ###### 函数防抖
