@@ -1,17 +1,22 @@
 # directivejs
+
 > 记录常用vue自定义指令
 
-### Initial 
+### Initial
+
 ```js
 npm install vuejs-directive
 ```
-##### 使用方法 
+
+##### 使用方法
+
 ```js
 // main.ts中
 const app = createApp(App);
 import directivejs from 'vuejs-directive';
 app.use(directivejs)
 ```
+
 ###### 函数防抖
 
 ```template
@@ -24,4 +29,18 @@ app.use(directivejs)
 
 const = click(Event,1):void
 
+```
+
+###### 文本省略
+
+```template
+<span v-ellipsis="2">测试</span>
+默认值为1
+```
+
+###### 元素大小监控
+
+```template
+<div v-size-ob="api">测试测试</div>
+//返回元素的宽高
 ```
