@@ -1,6 +1,6 @@
 {
   "name": "vuejs-directive",
-  "version": "0.0.2",
+  "version": "0.0.21",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "types/index.d.js",
