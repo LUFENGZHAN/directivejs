@@ -1,6 +1,6 @@
-# directivejs
+# vuejs-directive
 
-> 记录常用vue自定义指令
+> 记录vue自定义指令
 
 ### Initial
 
@@ -20,13 +20,10 @@ app.use(directivejs)
 ###### 函数防抖
 
 ```template
-// 默认500
-<div v-debounce="click"/>
-
-// 可使用属性debounce-time更改,可通过[1]传递一个参数
-
 <div v-debounce:[1]="click" debounce-time="1000"/>
 
+// debounce-time默认500
+// 可使用属性debounce-time更改,可通过[1]传递一个参数
 const = click(Event,1):void
 
 ```
@@ -38,9 +35,9 @@ const = click(Event,1):void
 默认值为1
 ```
 
-###### 元素大小监控
+###### 元素大小监听
 
-```template
+```vue
 <div v-size-ob="api">测试测试</div>
 //返回元素的宽高
 ```
