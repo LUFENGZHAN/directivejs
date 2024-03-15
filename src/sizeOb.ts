@@ -11,12 +11,12 @@ let ob = new ResizeObserver(entries => {
     }
 })
 export default {
-    mounted(el: Element, binding: CustomDirectiveBinding) {
-        if (typeof binding.value !== 'function' && Object.prototype.toString.call(binding.value) !== '[object Function]') return console.warn('binding value must be a function')
-        map.set(el, binding.value)
+    mounted(el: Element, binding?: CustomDirectiveBinding) {
+        if (typeof binding?.value !== 'function' && Object.prototype.toString.call(binding?.value) !== '[object Function]') return console.warn('binding value must be a function')
+        map.set(el, binding?.value)
         ob.observe(el)
     },
-    unmounted(el: Element, binding: CustomDirectiveBinding) {
+    unmounted(el: Element) {
         ob.unobserve(el)
     },
 }

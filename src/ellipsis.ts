@@ -1,7 +1,7 @@
 import { CustomDirectiveBinding } from './index'
 export default {
-    mounted(el: { style: any; }, binding: CustomDirectiveBinding) {
-        const webkitLineClamp = typeof Number(binding.value) === 'number' && Number(binding.value) || 1
+    mounted(el: { style: any; }, binding?: CustomDirectiveBinding) {
+        const webkitLineClamp = typeof Number(binding?.value) === 'number' && Number(binding?.value) || 1
         Object.assign(el?.style, {
             display: "-webkit-box",
             webkitLineClamp: webkitLineClamp,

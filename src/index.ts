@@ -6,19 +6,18 @@ export const directives = {
     debounce,
     ellipsis,
     sizeOb
-    // 导入其他自定义指令
 };
 export default {
     install(app: App<Element>) {
         Object.keys(directives).forEach(key => {
-            app.directive(key, directives[key] as any)
+            app.directive(key, directives[key])
         })
     }
 }
 export interface CustomDirectiveBinding {
-    value: any;
-    arg: string;
-    modifiers: {
+    value?: any;
+    arg?: string;
+    modifiers?: {
         [key: string]: boolean;
     };
 }

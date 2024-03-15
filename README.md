@@ -12,9 +12,14 @@ npm install vuejs-directive
 
 ```js
 // main.ts中
+// 全局
 const app = createApp(App);
 import directivejs from 'vuejs-directive';
 app.use(directivejs)
+
+// 单个
+import {directives} from 'vuejs-directive'
+app.directive('string',directives.debounce)
 ```
 
 ###### 函数防抖
