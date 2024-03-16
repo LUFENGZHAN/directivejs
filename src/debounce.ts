@@ -3,7 +3,7 @@ export default {
     mounted(el: Element, binding?: CustomDirectiveBinding) {
         let timer: any;
         const time = el.getAttribute('debounce-time') || 500 
-        if (typeof binding?.value !== 'function') return new ErrorEvent('binding value must be a function')
+        if (typeof binding?.value !== 'function' && Object.prototype.toString.call(binding?.value) !== '[object Function]') return console.warn('binding value must be a function')
         el.addEventListener('click', (e) => {
             clearTimeout(timer)
             timer = setTimeout(() => {
