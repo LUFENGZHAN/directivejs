@@ -14,6 +14,7 @@ npm install vuejs-directive
 | throttle | 函数节流 | 节流时间默认为500ms |
 | ellipsis | 文本省略 | 行数默认为1 |
 | sizeOb | 监听元素大小 | 返回宽高 |
+| signature | canvas画布 | 返回base64与File |
 <!-- | copy | 复制指令 | 复制内容到粘贴板 | -->
 <!-- | drag | 拖拽指令 | 拖拽元素 | -->
 <!-- | longpress | 长按指令 | 长按触发事件 | -->
