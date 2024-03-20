@@ -11,12 +11,11 @@ npm install vuejs-directive
 | 指令 | 说明 | 备注 |
 |---|---|---|
 | debounce | 函数防抖 | 防抖时间默认为500ms|
-| throttle | 函数节流 | 节流时间默认为500ms |
 | ellipsis | 文本省略 | 行数默认为1 |
 | sizeOb | 监听元素大小 | 返回宽高 |
 | writing | canvas画布 | 使用函数可返回base64与File，line-width改变笔画宽度默认为3、line-color改变笔画色彩默认为#000000  |
+<!-- | throttle | 函数节流 | 节流时间默认为500ms | -->
 <!-- | watermark | 水印指令 | 添加水印 | -->
-<!-- | copy | 复制指令 | 复制内容到粘贴板 | -->
 <!-- | drag | 拖拽指令 | 拖拽元素 | -->
 <!-- | longpress | 长按指令 | 长按触发事件 | -->
 <!-- | lazy | 懒加载指令 | 图片懒加载 | -->
