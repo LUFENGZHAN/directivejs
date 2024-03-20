@@ -14,7 +14,7 @@ npm install vuejs-directive
 | throttle | 函数节流 | 节流时间默认为500ms |
 | ellipsis | 文本省略 | 行数默认为1 |
 | sizeOb | 监听元素大小 | 返回宽高 |
-| signature | canvas画布 | 使用函数可返回base64与File，可通过line-width改变笔画宽度默认为3、line-color改变笔画色彩默认为#000000  |
+| writing | canvas画布 | 使用函数可返回base64与File，line-width改变笔画宽度默认为3、line-color改变笔画色彩默认为#000000  |
 <!-- | watermark | 水印指令 | 添加水印 | -->
 <!-- | copy | 复制指令 | 复制内容到粘贴板 | -->
 <!-- | drag | 拖拽指令 | 拖拽元素 | -->
@@ -58,9 +58,10 @@ const = click(Event,1):void
 ###### canvas画布
 
 ```html
-<canvas line-width="3" line-color="red" v-signature="api"></canvas>
-const = api(e)=>{
+<canvas line-width="3" line-color="red" v-writing="api"></canvas>
+const = api(object,Fn)=>{
     // 返回base64与File
+    第二参数为回调函数，可用于重置画布
 }
 
 ```

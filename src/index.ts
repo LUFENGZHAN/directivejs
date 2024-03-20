@@ -2,12 +2,12 @@ import { App } from 'vue'
 import debounce from './debounce'
 import ellipsis from './ellipsis'
 import sizeOb from './sizeOb'
-import signature from './signature'
+import writing from './writing'
 export const directives = {
     debounce,
     ellipsis,
     sizeOb,
-    signature
+    writing
 };
 export default {
     install(app: App<Element>) {
