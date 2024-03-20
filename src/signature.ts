@@ -3,7 +3,7 @@ let is_function = true
 let isDrawing = false;
 let X = 0
 let Y = 0
-
+let timer: number | undefined = void 0
 const dataURLtoBlob = (dataURL: string) => {
     const byteString = atob(dataURL.split(',')[1]);
     const ab = new ArrayBuffer(byteString.length);
@@ -46,17 +46,19 @@ export default {
 
                 function endDrawing() {
                     isDrawing = false;
-                    const dataURL = el.toDataURL('image/png');
-                    const blob = dataURLtoBlob(dataURL);
-                    const file = new File([blob], 'image.png', { type: 'image/png' });
-                    if (is_function && binding?.value) {
-                        binding.value({
-                            file,
-                            url: dataURL,
-                        });
-                    }
+                    clearTimeout(timer)
+                    timer = setTimeout(() => {
+                        const dataURL = el.toDataURL('image/png');
+                        const blob = dataURLtoBlob(dataURL);
+                        const file = new File([blob], 'image.png', { type: 'image/png' });
+                        if (is_function && binding?.value) {
+                            binding.value({
+                                file,
+                                url: dataURL,
+                            });
+                        }
+                    }, 1000)
                 }
-
                 el.addEventListener('mousedown', startDrawing);
                 el.addEventListener('mousemove', draw);
                 el.addEventListener('mouseup', endDrawing);
