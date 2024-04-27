@@ -14,9 +14,9 @@ npm install vuejs-directive
 | ellipsis | 文本省略 | 行数默认为1 |
 | sizeOb | 监听元素大小 | 返回宽高 |
 | writing | canvas画布 | 使用函数可返回base64与File，line-width改变笔画宽度默认为3、line-color改变笔画色彩默认为#000000  |
-<!-- | throttle | 函数节流 | 节流时间默认为500ms | -->
+| largeScreen | 元素自适应 | |
+<!-- | dragPoint | 拖拽指令 | 拖拽元素 | -->
 <!-- | watermark | 水印指令 | 添加水印 | -->
-<!-- | drag | 拖拽指令 | 拖拽元素 | -->
 <!-- | longpress | 长按指令 | 长按触发事件 | -->
 <!-- | lazy | 懒加载指令 | 图片懒加载 | -->
 
@@ -32,8 +32,36 @@ app.use(directivejs)
 // 单个
 import {directives} from 'vuejs-directive'
 app.directive('string',directives.debounce)
-```
 
+```
+```template
+// 局部使用
+<template>
+<div v-size-ob="size" class="box"></div>
+</template>
+
+// <script lang='ts' setup>
+// import  {directives} from 'vuejs-directive'
+// const vSizeOb = directives.sizeOb
+// const size = (e)=> {
+//     console.log(e);
+// }
+// </script>
+
+// <script lang="ts">
+// import { directives } from 'vuejs-directive';
+// export default {
+// 	directives: {
+// 		sizeOb: directives.sizeOb,
+// 	},
+// 	methods: {
+// 		size(el: any) {
+// 			console.log(el);
+// 		},
+// 	},
+// };
+// </script>
+```
 ###### 函数防抖
 
 ```html
@@ -63,4 +91,9 @@ const = api(object,Fn)=>{
     第二参数为回调函数，可用于重置画布
 }
 
+```
+###### 大屏自适应
+
+```html
+<div v-large-screen width="1920" height="1080"></div>
 ```

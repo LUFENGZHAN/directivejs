@@ -3,11 +3,13 @@ import debounce from './debounce'
 import ellipsis from './ellipsis'
 import sizeOb from './sizeOb'
 import writing from './writing'
+import largeScreen from './largeScreen'
 export const directives = {
     debounce,
     ellipsis,
     sizeOb,
-    writing
+    writing,
+    largeScreen
 };
 export default {
     install(app: App<Element>) {
