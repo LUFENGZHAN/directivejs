@@ -20,25 +20,24 @@ function startDrawing(e: any) {
 }
 function getXY(e: any, el: HTMLCanvasElement) {
     return {
-        X: Number(e.offsetX || (e.changedTouches && (e.changedTouches[0].clientX - el.offsetLeft).toFixed(5))),
-        Y: Number(e.offsetY || (e.changedTouches && (e.changedTouches[0].clientY - el.offsetTop).toFixed(5))),
+        X: Number(e.offsetX || (e.changedTouches && (e.changedTouches[0].clientX - el.offsetLeft))),
+        Y: Number(e.offsetY || (e.changedTouches && (e.changedTouches[0].clientY - el.offsetTop))),
     };
 }
 function draw(ctx: CanvasRenderingContext2D, e: any, el: HTMLCanvasElement) {
     e.preventDefault();
-    let EX = getXY(e, el).X;
-    let EY = getXY(e, el).Y;
     if (!isDrawing) return;
+    const { X: currentX, Y: currentY } = getXY(e, el);
+    
     ctx.lineCap = "round";
     ctx.strokeStyle = lineColor;
     ctx.beginPath();
     ctx.moveTo(X, Y);
-    ctx.lineTo(EX, EY);
+    ctx.lineTo(currentX, currentY);
     ctx.lineWidth = Number(lineWidth);
     ctx.stroke();
-    EX = getXY(e, el).X;
-    EY = getXY(e, el).Y;
-    [X, Y] = [EX, EY];
+
+    [X, Y] = [currentX, currentY];
 }
 function endDrawing(el: HTMLCanvasElement, ctx: CanvasRenderingContext2D, Fn?: Function) {
     isDrawing = false;
@@ -74,11 +73,11 @@ export default {
             el.height = el.offsetHeight;
             const ctx: any = el.getContext("2d");
             el.addEventListener("mousedown", startDrawing);
-            el.addEventListener("mousemove", (e) => draw(ctx, e, el));
+            el.addEventListener("mousemove", (e) => draw(ctx, e, el),{ passive: false });
             el.addEventListener("mouseup", (e) => endDrawing(el, ctx, binding?.value));
             el.addEventListener("mouseleave", (e) => endDrawing(el, ctx, binding?.value));
             el.addEventListener("touchstart", startDrawing);
-            el.addEventListener("touchmove", (e) => draw(ctx, e, el));
+            el.addEventListener("touchmove", (e) => draw(ctx, e, el),{ passive: false });
             el.addEventListener("touchend", (e) => endDrawing(el, ctx, binding?.value));
         } catch (error) {
             console.error(error);

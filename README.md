@@ -14,8 +14,8 @@ npm install vuejs-directive
 | ellipsis | 文本省略 | 行数默认为1 |
 | sizeOb | 监听元素大小 | 返回宽高 |
 | writing | canvas画布 | 使用函数可返回base64与File，line-width改变笔画宽度默认为3、line-color改变笔画色彩默认为#000000  |
-| largeScreen | 元素自适应 | |
-<!-- | dragPoint | 拖拽指令 | 拖拽元素 | -->
+| largeScreen | 元素自适应 |默认1920 * 1080 |
+| dragPoint | 拖拽指令 | 返回left与top值 |
 <!-- | watermark | 水印指令 | 添加水印 | -->
 <!-- | longpress | 长按指令 | 长按触发事件 | -->
 <!-- | lazy | 懒加载指令 | 图片懒加载 | -->
@@ -90,10 +90,17 @@ const = api(object,Fn)=>{
     // 返回base64与File
     第二参数为回调函数，可用于重置画布
 }
-
 ```
 ###### 大屏自适应
 
 ```html
+<div v-large-screen ></div>
 <div v-large-screen width="1920" height="1080"></div>
+```
+
+###### 拖拽指令
+
+```html
+<div v-dragPoint></div>
+
 ```

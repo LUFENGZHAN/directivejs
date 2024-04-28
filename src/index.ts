@@ -4,12 +4,14 @@ import ellipsis from './ellipsis'
 import sizeOb from './sizeOb'
 import writing from './writing'
 import largeScreen from './largeScreen'
+import dragPoint from './dragPoint'
 export const directives = {
     debounce,
     ellipsis,
     sizeOb,
     writing,
-    largeScreen
+    largeScreen,
+    dragPoint
 };
 export default {
     install(app: App<Element>) {
