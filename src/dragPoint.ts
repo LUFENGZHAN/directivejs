@@ -42,9 +42,10 @@ export default {
 	mounted(el: HTMLElement, binding: CustomDirectiveBinding) {
 		try {
 			const styles = window.getComputedStyle(el);
+			const position = styles.getPropertyValue('position');
 			const cursor = styles.getPropertyValue('cursor');
 			const zIndex = styles.getPropertyValue('z-index');
-			el.style.position = 'fixed';
+			el.style.position = position === 'static' ? 'fixed' : position;
 			el.style.cursor = cursor === 'auto' ? 'pointer' : cursor;
 			el.style.zIndex = zIndex === 'auto' ? '999' : zIndex;
 			el.addEventListener('mousedown', e => startDrawing(e,el));
